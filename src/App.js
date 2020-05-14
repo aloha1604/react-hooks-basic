@@ -6,6 +6,8 @@ import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 import PostList from './components/PostList';
 import Pagination from './components/Pagination';
+import PostFiltersForm from './components/PostFiltersForm';
+
 function App() {
 
   const [todoList, setTodoList] = useState([
@@ -76,8 +78,18 @@ function App() {
     setTodoList(newTodoList);
   }
 
+  function handleFiltersChange(newFilters) {
+    console.log('New filters : ', newFilters);
+    setFilters({
+      ...filters,
+      _page: 1,
+      title_like: newFilters.searchTerm,
+    });
+  }
+
   return (
     <div className="App">
+      <PostFiltersForm onSubmit={handleFiltersChange} />
       <h1>React Hooks - todoList</h1>
       {/* <TodoForm onSubmit={handleTodoFormSubmit} /> */}
       {/* <TodoList todos={todoList} onTodoClick={handleTodoClick} /> */}
