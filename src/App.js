@@ -9,6 +9,7 @@ import Pagination from './components/Pagination';
 import PostFiltersForm from './components/PostFiltersForm';
 import Clock from './components/Clock';
 import BetterClock from './components/BetterClock';
+import MagicBox from './components/MagicBox';
 
 function App() {
 
@@ -104,9 +105,11 @@ function App() {
         onPageChange={handlePageChange}
       /> */}
 
-      {showClock && <Clock />}
+      {/* {showClock && <Clock />}
       <BetterClock />
-      <button onClick={() => setShowClock(!showClock)}>Hide clock</button>
+      <button onClick={() => setShowClock(!showClock)}>Hide clock</button> */}
+
+      <MagicBox />
 
     </div>
   );
